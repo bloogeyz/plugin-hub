@@ -5,6 +5,10 @@ This repository contains markers for [RuneLite](https://github.com/runelite/rune
 plugins that are not supported by the RuneLite Developers. The plugins are
 provided "as is"; we make no guarantees about any plugin in this repo.
 
+## Setting up the development environment
+
+We recommend [IntelliJ Idea Community Edition](https://www.jetbrains.com/idea/download/) as well as Java 11. You can either have
+IntelliJ install Java (select `Eclipse Temurin`) or download it from https://adoptium.net/temurin/releases/.
 
 ## Creating new plugins
 There are two methods to create an external plugin, you can either:
@@ -12,8 +16,6 @@ There are two methods to create an external plugin, you can either:
  - Use [this](https://github.com/runelite/example-plugin/) plugin template.
 
  - Clone this repository and run the `create_new_plugin.py` script. This requires you to have `python3` installed
-
-**If you are using IntelliJ, you will need at least version 2017.3**
 
 ### Using the template repository
  1. Generate your own repository with [this](https://github.com/runelite/example-plugin/generate) link. You have to be logged in to GitHub.
@@ -26,7 +28,7 @@ There are two methods to create an external plugin, you can either:
 
  5. Open `build.gradle` and edit `runeLiteVersion` from `1.5.44-SNAPSHOT` to the latest release. If you are unsure about the current version it's specified on [runelite.net](https://runelite.net/).
 
- 6. In order to make sure everything works correctly, try to start the client with your external plugin enabled by running the test.
+ 6. In order to make sure everything works correctly, try to start the client with your external plugin enabled by running the test. The test requires `-ea` to be added to your VM options to enable assertions, which can be found in IntellIJ in `Run/Debug Configurations` under `Modify options`, `Add VM options`, and then adding `-ea` into the input field which appears.
 
  ![run-test](https://i.imgur.com/tKSQH5e.png)
 
